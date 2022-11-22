@@ -29,9 +29,9 @@ public class ExperienciasController {
         return "Experiencia eliminada";
     }
 
-    @PostMapping(path = "/update")
+    /*@PostMapping(path = "/update")
     public @ResponseBody String updateExperiencia(@RequestParam String nombre, @RequestParam String descripcion, @RequestParam String direccion, @RequestParam Float precio){
         experienciasService.actualizarExperiencia(nombre, descripcion, direccion, precio);
         return "Experiencia Actualizada";
-    }
+    }*/
 }

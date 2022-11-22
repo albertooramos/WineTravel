@@ -5,5 +5,5 @@ import com.alberto.winetravel.domain.Experiencias;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ExperienciasRepository extends CrudRepository<Experiencias, Integer> {
-    Experiencias getExperienciasByNombre(String nombre);
+    Experiencias getExperienciasBynombreExperiencia(String nombreExperiencia);
 }

@@ -27,7 +27,7 @@ public class ExperienciasService {
     }
 
     public void eliminarExperiencia(String nombre){
-        Experiencias experiencia=experienciasRepository.getExperienciasByNombre(nombre);
+        Experiencias experiencia=experienciasRepository.getExperienciasBynombreExperiencia(nombre);
         experienciasRepository.delete(experiencia);
     }
 
