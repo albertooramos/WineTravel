@@ -1,6 +1,7 @@
 package com.alberto.winetravel.controller;
 
 import com.alberto.winetravel.domain.Ciudades;
+import com.alberto.winetravel.response.StringResponse;
 import com.alberto.winetravel.service.CiudadesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -21,14 +22,14 @@ public class CiudadesController {
     }
 
     @PostMapping(path = "/add")
-    public @ResponseBody String addCiudad(@RequestParam String nombre) {
+    public @ResponseBody StringResponse addCiudad(@RequestParam String nombre) {
         ciudadesService.addCiudad(nombre);
-        return "Ciudad guardada";
+        return new StringResponse("Ciudad guardada");
     }
 
     @DeleteMapping(path = "/delete")
-    public @ResponseBody String deleteCiudad(@RequestParam String nombre) {
+    public @ResponseBody StringResponse deleteCiudad(@RequestParam String nombre) {
         ciudadesService.eliminarCiudad(nombre);
-        return "Ciudad eliminada";
+        return new StringResponse("Ciudad eliminada");
     }
 }

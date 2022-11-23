@@ -20,6 +20,9 @@ public class TipoExperienciasService {
         return tipoExperienciasRepository.findAll();
     }
 
+    public TipoExperiencias getTipoExpericiaByNombre(String nombreTipoExperiencia){
+        return tipoExperienciasRepository.getTipoExperienciasByNombreTipoExperiencia(nombreTipoExperiencia);
+    }
     public void addTipoExperiencia(String nombre) {
         TipoExperiencias tipoExperiencias = new TipoExperiencias();
         tipoExperiencias.setNombreTipoExperiencia(nombre);

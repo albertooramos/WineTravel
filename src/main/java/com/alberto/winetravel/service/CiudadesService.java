@@ -18,7 +18,9 @@ public class CiudadesService {
     public Iterable<Ciudades> getCiudades() {
         return ciudadesRepository.findAll();
     }
-
+    public Ciudades getCiudadByNombre(String nombreCiudad){
+        return ciudadesRepository.getCiudadesByNombreCiudad(nombreCiudad);
+    }
     public void addCiudad(String nombre) {
         Ciudades ciudad = new Ciudades();
         ciudad.setNombreCiudad(nombre);

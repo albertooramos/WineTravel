@@ -1,6 +1,7 @@
 package com.alberto.winetravel.controller;
 
 import com.alberto.winetravel.domain.Usuarios;
+import com.alberto.winetravel.response.StringResponse;
 import com.alberto.winetravel.service.UsuariosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,9 +19,9 @@ public class UsuariosController {
     }
 
     @PostMapping(path = "/add")
-    public @ResponseBody String addUsuario(@RequestParam String email, @RequestParam String password, @RequestParam String nombre){
+    public @ResponseBody StringResponse addUsuario(@RequestParam String email, @RequestParam String password, @RequestParam String nombre){
         usuariosService.addUsuario(email, password, nombre);
-        return "Usuario guardado";
+        return new StringResponse("Usuario guardado");
     }
 
     @GetMapping("/getUsuarioByEmail")
@@ -29,8 +30,8 @@ public class UsuariosController {
     }
 
     @PostMapping(path = "/update")
-    public @ResponseBody String updateUsuario(@RequestParam String email, @RequestParam String password){
+    public @ResponseBody StringResponse updateUsuario(@RequestParam String email, @RequestParam String password){
         usuariosService.actualizarPassword(email, password);
-        return "Usuario Actualizado";
+        return new StringResponse("Usuario Actualizado");
     }
 }

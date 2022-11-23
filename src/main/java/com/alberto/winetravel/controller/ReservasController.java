@@ -2,6 +2,7 @@ package com.alberto.winetravel.controller;
 
 import com.alberto.winetravel.domain.Experiencias;
 import com.alberto.winetravel.domain.Reservas;
+import com.alberto.winetravel.response.StringResponse;
 import com.alberto.winetravel.service.ReservasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,20 +20,21 @@ public class ReservasController {
     }
 
     @PostMapping(path = "/add")
-    public @ResponseBody String addReservas(@RequestParam int numero){
-        reservasService.addReserva(numero);
-        return "Reserva guardada";
+    public @ResponseBody StringResponse addReservas(@RequestParam int idExperiencia, @RequestParam int idUsuario, @RequestParam int numero){
+        //POR HACER
+        //reservasService.addReserva(idExperiencia, idUsuario, numero);//igual que hemos hecho en addExperiencias
+        return new StringResponse("Reserva guardada");
     }
 
     @DeleteMapping(path = "/delete")
-    public @ResponseBody String deleteReserva(@RequestParam int id) {
+    public @ResponseBody StringResponse deleteReserva(@RequestParam int id) {
         reservasService.eliminarReserva(id);
-        return "Experiencia eliminada";
+        return new StringResponse("Experiencia eliminada");
     }
 
     @PostMapping(path = "/update")
-    public @ResponseBody String updateReserva(@RequestParam int numero){
-        reservasService.actualizarReserva(numero);
+    public @ResponseBody String updateReserva(@RequestParam int idReserva, @RequestParam int numero){
+        reservasService.actualizarReserva(idReserva, numero);
         return "Reserva Actualizada";
     }
 }

@@ -1,6 +1,7 @@
 package com.alberto.winetravel.controller;
 
 import com.alberto.winetravel.domain.TipoExperiencias;
+import com.alberto.winetravel.response.StringResponse;
 import com.alberto.winetravel.service.TipoExperienciasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +18,8 @@ public class TipoExperienciasController {
     }
 
     @PostMapping(path = "/add")
-    public @ResponseBody String addTipoExperiencia(@RequestParam String nombre){
+    public @ResponseBody StringResponse addTipoExperiencia(@RequestParam String nombre){
         tipoExperienciasService.addTipoExperiencia(nombre);
-        return "Tipo de experiencia guardada";
+        return new StringResponse("Tipo de experiencia guardada");
     }
 }

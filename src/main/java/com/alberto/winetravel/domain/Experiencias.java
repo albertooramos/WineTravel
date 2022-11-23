@@ -14,6 +14,7 @@ public class Experiencias {
     private String descripcionExperiencia;
     private float precio;
     private String direccion;
+    private String imagenExperiencia;
 
     @ManyToOne
     @JoinColumn(name = "id_ciudad")
@@ -78,5 +79,13 @@ public class Experiencias {
 
     public void setTipoExperiencias(TipoExperiencias tipoExperiencias) {
         this.tipoExperiencias = tipoExperiencias;
+    }
+
+    public String getImagenExperiencia() {
+        return imagenExperiencia;
+    }
+
+    public void setImagenExperiencia(String imagenExperiencia) {
+        this.imagenExperiencia = imagenExperiencia;
     }
 }
