@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ReservasRepository extends CrudRepository<Reservas, Integer> {
     Reservas getReservasByIdReserva(int id);
+
 }

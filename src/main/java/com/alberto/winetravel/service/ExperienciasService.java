@@ -16,11 +16,15 @@ public class ExperienciasService {
     @Autowired
     ExperienciasRepository experienciasRepository;
 
-    public Iterable<Experiencias> getExperiencias(){
+    public Iterable<Experiencias> getExperiencias() {
         return experienciasRepository.findAll();
     }
 
-    public void addExperiencia(String nombre, String descripcion, String direccion, float precio, Ciudades ciudad, TipoExperiencias tipoExperiencia, String imagenExperiencia){
+    public Experiencias getExperienciaByidExperiencia(int idExperiencia) {
+        return experienciasRepository.getExperienciasByidExperiencia(idExperiencia);
+    }
+
+    public void addExperiencia(String nombre, String descripcion, String direccion, float precio, Ciudades ciudad, TipoExperiencias tipoExperiencia, String imagenExperiencia) {
         Experiencias experiencia = new Experiencias();
         experiencia.setNombreExperiencia(nombre);
         experiencia.setDescripcionExperiencia(descripcion);
@@ -32,13 +36,13 @@ public class ExperienciasService {
         experienciasRepository.save(experiencia);
     }
 
-    public void eliminarExperiencia(String nombre){
-        Experiencias experiencia=experienciasRepository.getExperienciasBynombreExperiencia(nombre);
+    public void eliminarExperiencia(String nombre) {
+        Experiencias experiencia = experienciasRepository.getExperienciasBynombreExperiencia(nombre);
         experienciasRepository.delete(experiencia);
     }
 
-    public void actualizarExperiencia(int idExperiencia, String nombre, String descripcion, String direccion, float precio){
-        Experiencias experiencia= experienciasRepository.getExperienciasByidExperiencia(idExperiencia);
+    public void actualizarExperiencia(int idExperiencia, String nombre, String descripcion, String direccion, float precio) {
+        Experiencias experiencia = experienciasRepository.getExperienciasByidExperiencia(idExperiencia);
         experiencia.setNombreExperiencia(nombre);
         experiencia.setDescripcionExperiencia(descripcion);
         experiencia.setDireccion(direccion);

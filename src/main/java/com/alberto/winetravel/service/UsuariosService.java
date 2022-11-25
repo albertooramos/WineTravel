@@ -20,6 +20,9 @@ public class UsuariosService {
         return usuariosRepository.findAll();
     }
 
+    public Usuarios getUsuariosByidUsuario(int idUsuario){
+        return usuariosRepository.getUsuariosByidUsuario(idUsuario);
+    }
     public void addUsuario(String email, String password, String nombreUsuario) {
         Usuarios usuario = new Usuarios();
         usuario.setEmailUsuario(email);
