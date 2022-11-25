@@ -14,7 +14,9 @@ public class ExperienciasController {
 
     @Autowired
     ExperienciasService experienciasService;
+    @Autowired
     CiudadesService ciudadesService;
+    @Autowired
     TipoExperienciasService tipoExperienciasService;
 
     @GetMapping

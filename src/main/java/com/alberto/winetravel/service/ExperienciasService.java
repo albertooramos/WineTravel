@@ -38,7 +38,7 @@ public class ExperienciasService {
     }
 
     public void actualizarExperiencia(int idExperiencia, String nombre, String descripcion, String direccion, float precio){
-        Experiencias experiencia= experienciasRepository.getExperienciasByIdExperiencia(idExperiencia);
+        Experiencias experiencia= experienciasRepository.getExperienciasByidExperiencia(idExperiencia);
         experiencia.setNombreExperiencia(nombre);
         experiencia.setDescripcionExperiencia(descripcion);
         experiencia.setDireccion(direccion);
