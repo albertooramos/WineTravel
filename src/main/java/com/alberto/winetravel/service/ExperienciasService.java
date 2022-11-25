@@ -3,6 +3,7 @@ package com.alberto.winetravel.service;
 import com.alberto.winetravel.domain.Ciudades;
 import com.alberto.winetravel.domain.Experiencias;
 import com.alberto.winetravel.domain.TipoExperiencias;
+import com.alberto.winetravel.domain.Usuarios;
 import com.alberto.winetravel.repository.ExperienciasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,8 @@ public class ExperienciasService {
         experiencia.setDireccion(direccion);
         experiencia.setPrecio(precio);
         experiencia.setCiudad(ciudad);
+        experiencia.setTipoExperiencias(tipoExperiencia);
+        experiencia.setImagenExperiencia(imagenExperiencia);
         experienciasRepository.save(experiencia);
     }
 
@@ -35,6 +38,11 @@ public class ExperienciasService {
     }
 
     public void actualizarExperiencia(int idExperiencia, String nombre, String descripcion, String direccion, float precio){
-// POR HACER obtener objeto experiencia a travas del id o el nombre. Editar esa experiencia, cambiando todos los campos y luego el update
+        Experiencias experiencia= experienciasRepository.getExperienciasByIdExperiencia(idExperiencia);
+        experiencia.setNombreExperiencia(nombre);
+        experiencia.setDescripcionExperiencia(descripcion);
+        experiencia.setDireccion(direccion);
+        experiencia.setPrecio(precio);
+        experienciasRepository.save(experiencia);
     }
 }

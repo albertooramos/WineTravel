@@ -32,9 +32,4 @@ public class ReservasController {
         return new StringResponse("Experiencia eliminada");
     }
 
-    @PostMapping(path = "/update")
-    public @ResponseBody String updateReserva(@RequestParam int idReserva, @RequestParam int numero){
-        reservasService.actualizarReserva(idReserva, numero);
-        return "Reserva Actualizada";
-    }
 }
