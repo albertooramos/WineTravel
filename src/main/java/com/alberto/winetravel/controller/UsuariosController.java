@@ -13,10 +13,10 @@ public class UsuariosController {
     @Autowired
     UsuariosService usuariosService;
 
-    @GetMapping
-    public @ResponseBody Iterable<Usuarios> getUsuarios(){
-        return usuariosService.getUsuarios();
-    }
+    //@GetMapping
+    //public @ResponseBody Iterable<Usuarios> getUsuarios(){
+        //return usuariosService.getUsuarios();
+    //}
 
     @PostMapping(path = "/add")
     public @ResponseBody StringResponse addUsuario(@RequestParam String email, @RequestParam String password, @RequestParam String nombre){
